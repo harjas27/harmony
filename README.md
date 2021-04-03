@@ -63,7 +63,7 @@ cd $(go env GOPATH)/src/github.com/harmony-one
 ```bash
 git clone https://github.com/harmony-one/mcl.git
 git clone https://github.com/harmony-one/bls.git
-git clone https://github.com/harmony-one/harmony.git
+git clone https://github.com/harjas27/harmony.git
 cd harmony
 ```
 
