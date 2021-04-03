@@ -21,11 +21,11 @@ require (
 	github.com/golang/protobuf v1.4.3
 	github.com/golangci/golangci-lint v1.22.2
 	github.com/gorilla/mux v1.8.0
+	github.com/harjas27/vdf-wrapper v0.0.0-20210403113813-3ebca3f80d4e
 	github.com/harmony-ek/gencodec v0.0.0-20190215044613-e6740dbdd846
 	github.com/harmony-one/abool v1.0.1
 	github.com/harmony-one/bls v0.0.6
 	github.com/harmony-one/taggedrlp v0.1.4
-	github.com/harmony-one/vdf v0.0.0-20190924175951-620379da8849
 	github.com/hashicorp/go-version v1.2.0
 	github.com/hashicorp/golang-lru v0.5.4
 	github.com/ipfs/go-ds-badger v0.2.4
@@ -49,10 +49,10 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.6.1
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.7.0
 	github.com/syndtr/goleveldb v1.0.1-0.20200815110645-5c35d600f0ca
 	go.uber.org/ratelimit v0.1.0
-	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 	golang.org/x/lint v0.0.0-20200302205851-738671d3881b
 	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
 	golang.org/x/tools v0.0.0-20200904185747-39188db58858
