@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 )
 
 // PassSrcType is the type of passphrase provider source.

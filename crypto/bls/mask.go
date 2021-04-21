@@ -1,8 +1,8 @@
 package bls
 
 import (
-	"github.com/harmony-one/bls/ffi/go/bls"
 	lru "github.com/hashicorp/golang-lru"
+	"github.com/herumi/bls-go-binary/bls"
 	"github.com/pkg/errors"
 )
 

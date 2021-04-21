@@ -5,8 +5,8 @@ import (
 
 	"github.com/harmony-one/harmony/crypto/bls"
 
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
 	harmony_bls "github.com/harmony-one/harmony/crypto/bls"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 	"github.com/stretchr/testify/assert"
 )
 

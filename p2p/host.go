@@ -12,11 +12,11 @@ import (
 
 	"github.com/libp2p/go-libp2p-core/protocol"
 
-	"github.com/harmony-one/bls/ffi/go/bls"
 	nodeconfig "github.com/harmony-one/harmony/internal/configs/node"
 	"github.com/harmony-one/harmony/internal/utils"
 	"github.com/harmony-one/harmony/p2p/discovery"
 	sttypes "github.com/harmony-one/harmony/p2p/stream/types"
+	"github.com/herumi/bls-go-binary/bls"
 	"github.com/libp2p/go-libp2p"
 	libp2p_crypto "github.com/libp2p/go-libp2p-core/crypto"
 	libp2p_host "github.com/libp2p/go-libp2p-core/host"

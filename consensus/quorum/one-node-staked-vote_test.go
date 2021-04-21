@@ -11,9 +11,9 @@ import (
 	shardingconfig "github.com/harmony-one/harmony/internal/configs/sharding"
 
 	"github.com/ethereum/go-ethereum/common"
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
 	"github.com/harmony-one/harmony/numeric"
 	"github.com/harmony-one/harmony/shard"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 )
 
 var (

@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
 	"github.com/harmony-one/harmony/multibls"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 )
 
 // loadHelper defines the helper interface to load bls keys. Implemented by

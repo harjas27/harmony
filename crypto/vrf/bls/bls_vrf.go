@@ -5,8 +5,8 @@ import (
 	"crypto/sha256"
 	"errors"
 
-	"github.com/harmony-one/bls/ffi/go/bls"
 	"github.com/harmony-one/harmony/crypto/vrf"
+	"github.com/herumi/bls-go-binary/bls"
 )
 
 var (

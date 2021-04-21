@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"math/big"
 
-	"github.com/harmony-one/bls/ffi/go/bls"
+	"github.com/herumi/bls-go-binary/bls"
 	"github.com/pkg/errors"
 )
 

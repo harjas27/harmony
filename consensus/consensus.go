@@ -8,7 +8,6 @@ import (
 	"github.com/harmony-one/harmony/crypto/bls"
 
 	"github.com/harmony-one/abool"
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
 	"github.com/harmony-one/harmony/consensus/quorum"
 	"github.com/harmony-one/harmony/core"
 	"github.com/harmony-one/harmony/core/types"
@@ -17,6 +16,7 @@ import (
 	"github.com/harmony-one/harmony/multibls"
 	"github.com/harmony-one/harmony/p2p"
 	"github.com/harmony-one/harmony/staking/slash"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 	"github.com/pkg/errors"
 )
 

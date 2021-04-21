@@ -5,11 +5,11 @@ import (
 	"encoding/binary"
 
 	protobuf "github.com/golang/protobuf/proto"
-	libbls "github.com/harmony-one/bls/ffi/go/bls"
 	msg_pb "github.com/harmony-one/harmony/api/proto/message"
 	"github.com/harmony-one/harmony/core/types"
 	"github.com/harmony-one/harmony/crypto/bls"
 	"github.com/harmony-one/harmony/crypto/hash"
+	libbls "github.com/herumi/bls-go-binary/bls"
 	"github.com/pkg/errors"
 )
 

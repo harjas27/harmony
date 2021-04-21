@@ -9,11 +9,11 @@ import (
 	"github.com/harmony-one/harmony/consensus/signature"
 
 	"github.com/ethereum/go-ethereum/rlp"
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
 	msg_pb "github.com/harmony-one/harmony/api/proto/message"
 	"github.com/harmony-one/harmony/consensus/quorum"
 	"github.com/harmony-one/harmony/core/types"
 	"github.com/harmony-one/harmony/p2p"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 )
 
 func (consensus *Consensus) announce(block *types.Block) {

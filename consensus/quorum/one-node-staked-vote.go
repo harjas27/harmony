@@ -10,7 +10,7 @@ import (
 	"github.com/harmony-one/harmony/internal/utils"
 
 	"github.com/ethereum/go-ethereum/common"
-	bls_core "github.com/harmony-one/bls/ffi/go/bls"
+	bls_core "github.com/herumi/bls-go-binary/bls"
 	"github.com/pkg/errors"
 
 	"github.com/harmony-one/harmony/consensus/votepower"

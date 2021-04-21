@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/harmony-one/bls/ffi/go/bls"
+	"github.com/herumi/bls-go-binary/bls"
 )
 
 // Test the basic functionality of a BLS multi-sig mask.
