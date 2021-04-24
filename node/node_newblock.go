@@ -144,7 +144,7 @@ func (node *Node) ProposeNewBlock(commitSigs chan []byte) (*types.Block, error) 
 
 	// After staking, all coinbase will be the address of bls pub key
 	if node.Blockchain().Config().IsStaking(header.Epoch()) {
-		blsPubKeyBytes := leaderKey.Object.GetAddress()
+		blsPubKeyBytes := leaderKey.Object.Serialize()
 		coinbase.SetBytes(blsPubKeyBytes[:])
 	}
 

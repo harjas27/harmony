@@ -74,7 +74,7 @@ func GetAddressFromBLSPubKeyBytes(pubKeyBytes []byte) common.Address {
 	pubKey, err := bls.BytesToBLSPublicKey(pubKeyBytes[:])
 	addr := common.Address{}
 	if err == nil {
-		addrBytes := pubKey.GetAddress()
+		addrBytes := pubKey.Serialize()
 		addr.SetBytes(addrBytes[:])
 	} else {
 		Logger().Err(err).Msg("Failed to get address of bls key")
