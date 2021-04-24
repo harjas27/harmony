@@ -1,4 +1,4 @@
-module github.com/harmony-one/harmony
+module github.com/harjas27/harmony
 
 go 1.14
 
