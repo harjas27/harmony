@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/harmony-one/harmony/api/service/pprof"
 	"io/ioutil"
 	"math/big"
 	"math/rand"
@@ -115,6 +116,7 @@ func registerRootCmdFlags() error {
 }
 
 func runHarmonyNode(cmd *cobra.Command, args []string) {
+	fmt.Print("Hello, starting ......")
 	if cli.GetBoolFlagValue(cmd, versionFlag) {
 		printVersion()
 		os.Exit(0)
@@ -131,7 +133,8 @@ func runHarmonyNode(cmd *cobra.Command, args []string) {
 	}
 
 	setupNodeLog(cfg)
-	setupPprof(cfg)
+	fmt.Println("Hello, starting ")
+	//setupPprof(cfg)
 	setupNodeAndRun(cfg)
 }
 
@@ -246,6 +249,13 @@ func setupPprof(config harmonyConfig) {
 	enabled := config.Pprof.Enabled
 	addr := config.Pprof.ListenAddr
 
+	// flags for enabling/disabling http and file dump
+	// address, port
+	// file path
+	// frequency
+	// rolling up dumps
+	// enabling individual module
+	fmt.Print("Hello~~~~~~~~~~~~")
 	if enabled {
 		go func() {
 			http.ListenAndServe(addr, nil)
@@ -254,6 +264,7 @@ func setupPprof(config harmonyConfig) {
 }
 
 func setupNodeAndRun(hc harmonyConfig) {
+	fmt.Println("Hello, now here :( ......")
 	var err error
 
 	nodeconfigSetShardSchedule(hc)
@@ -390,6 +401,10 @@ func setupNodeAndRun(hc harmonyConfig) {
 	}
 	if hc.Prometheus.Enabled {
 		setupPrometheusService(currentNode, hc, nodeConfig.ShardID)
+	}
+	if hc.Pprof.HTTPEnabled || hc.Pprof.DumpEnabled {
+		fmt.Println("TBR - entered!!")
+		setupPprofService(currentNode, hc, nodeConfig.ShardID)
 	}
 
 	if hc.DNSSync.Server && !hc.General.IsOffline {
@@ -710,6 +725,32 @@ func setupConsensusAndNode(hc harmonyConfig, nodeConfig *nodeconfig.ConfigType) 
 	currentConsensus.SetMode(currentConsensus.UpdateConsensusInformation())
 	currentConsensus.NextBlockDue = time.Now()
 	return currentNode
+}
+
+func setupPprofService(node *node.Node, hc harmonyConfig, sid uint32) {
+	prometheusConfig := pprof.Config{
+		Enabled:             hc.Prometheus.Enabled,
+		ListenAddr:          hc.Pprof.ListenAddr,
+		DumpEnabled:         hc.Pprof.DumpEnabled,
+		Folder:              hc.Pprof.Folder,
+		DumpInterval:        hc.Pprof.DumpInterval,
+		CPUEnabled:          hc.Pprof.CPUEnabled,
+		GoRoutineEnabled:    hc.Pprof.GoRoutineEnabled,
+		ThreadCreateEnabled: hc.Pprof.ThreadCreateEnabled,
+		HeapEnabled:         hc.Pprof.HeapEnabled,
+		AllocsEnabled:       hc.Pprof.AllocsEnabled,
+		BlockEnabled:        hc.Pprof.BlockEnabled,
+		MutexEnabled:        hc.Pprof.MutexEnabled,
+		Network:             hc.Network.NetworkType,
+		Legacy:              hc.General.NoStaking,
+		NodeType:            hc.General.NodeType,
+		Shard:               sid,
+		Instance:            myHost.GetID().Pretty(),
+	}
+	fmt.Println("TBR - Preparing to register")
+	p := pprof.NewService(prometheusConfig)
+	fmt.Println("TBR - registered")
+	node.RegisterService(service.PProf, p)
 }
 
 func setupPrometheusService(node *node.Node, hc harmonyConfig, sid uint32) {

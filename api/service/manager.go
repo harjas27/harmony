@@ -22,6 +22,7 @@ const (
 	NetworkInfo
 	Prometheus
 	Synchronize
+	PProf
 )
 
 func (t Type) String() string {

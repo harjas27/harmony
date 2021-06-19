@@ -95,8 +95,18 @@ type txPoolConfig struct {
 }
 
 type pprofConfig struct {
-	Enabled    bool
-	ListenAddr string
+	HTTPEnabled         bool
+	ListenAddr          string
+	DumpEnabled         bool
+	Folder              string
+	DumpInterval        int
+	CPUEnabled          bool
+	GoRoutineEnabled    bool
+	ThreadCreateEnabled bool
+	HeapEnabled         bool
+	AllocsEnabled       bool
+	BlockEnabled        bool
+	MutexEnabled        bool
 }
 
 type logConfig struct {
